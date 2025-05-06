@@ -1,5 +1,5 @@
 # Moonbeam Practice
-A repo for learning about Moonbeam and implementing the [demo](https://docs.moonbeam.network/builders/get-started/quick-start/) on the website over Vite + React. 
+A repo for learning about Moonbeam and implementing the [example](https://docs.moonbeam.network/builders/get-started/quick-start/) from the website over Vite + React. 
 
 ## Background
 The idea behind this dApp was to write my smart contract in Solidity, deploy the same over the Moonbase Alpha testnet and interact with this Smart Contract via TypeScript. This dApp is currently capable of sending DEV tokens from a Sender Address to a Receiver Address and interact with a Smart Contract and increment a number. 
