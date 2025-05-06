@@ -1,54 +1,42 @@
-# React + TypeScript + Vite
+# Moonbeam Practice
+A repo for learning about Moonbeam and implementing the [demo](https://docs.moonbeam.network/builders/get-started/quick-start/) on the website over Vite + React. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Background
+The idea behind this dApp was to write my smart contract in Solidity, deploy the same over the Moonbase Alpha testnet and interact with this Smart Contract via TypeScript. This dApp is currently capable of sending DEV tokens from a Sender Address to a Receiver Address and interact with a Smart Contract and increment a number. 
 
-Currently, two official plugins are available:
+## Getting Started
+**Prerequisites:**
+- Node.js (v14+ recommended)
+- npm
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Installation
+### Clone the repository:
+```bash
+git clone https://github.com/bhargav1000/moonbeam-practice.git
+cd moonbeam-practice/src
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Install dependencies from npm:
+```bash
+npm install
 ```
+
+### Run the development server:
+```bash
+npm run dev
+```
+This should start the dApp (mostly accessible at http://localhost:5173).
+
+If you'd like to try this demo out, please create a `.env` in the `src` directory and add the following variables:
+```
+VITE_ADDRESS_FROM=<FROM ADDRESS>
+VITE_PRIVATE_KEY_FROM=<PRIVATE KEY>
+VITE_ADDRESS_TO=<TO ADDRESS>
+```
+
+# Using the dApp
+### Send Test Tokens (DEV) from Sender Address (ADDRESS_FROM) to Receiving Address(ADDRESS_TO):
+Click on the `Send DEV` button to send DEV tokens across accounts. The dApp is currently configured to send 0.00001 DEV tokens. (Feel to change the amount in `main.tsx`).
+
+### Increment a simple counter:
+This was practice to connect to the `Incrementer.sol` Smart Contract (deployed via Remix) and call the `increment()` function. The incremented number is also displayed in the app.
